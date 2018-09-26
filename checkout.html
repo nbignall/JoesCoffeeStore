@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Joe's Coffee Store</title>
+  <link href="css/layout.css" rel="stylesheet" />
+</head>
+<body>
+  <header id="mainHeader">
+    <div>
+      <a class="headerlogo" href="index.html">
+        <img src="images/logo.png" alt="Joe's Coffee Store logo" />
+      </a>
+      <span id="headername">Joe's Coffee Store</span>
+      <input type="search" class="searchbox" placeholder="Search our store" />
+    </div>
+    <nav class="backgroundgradient">
+      <ul>
+        <li><a class="navlink" href="index.html">Home</a></li>
+        <li><a class="navlink" href="blog.html">Blog</a></li>
+        <li><a class="navlink" href="allcoffees.html">Our Coffees</a></li>
+        <li><a class="navlink" href="accessories.html">Accessories</a></li>
+        <li><a class="navlink" href="gifts.html">Gifts</a></li>
+        <li><a class="navlink" href="findus.html">Find Us</a></li>
+        <li><a class="navlink" href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="welcomeimage">
+      <img src="images/coffeeheader.jpg" alt="Welcome image" />
+    </div>
+    <div id="coffeeofthemonth">
+      <img src="images/cotm.jpg" alt="Coffee of the month"/>
+    </div>
+    <section class="coffeedetails">
+      <header class="blockheader">
+        <span>CHECKOUT</span>
+      </header>
+
+      <form id="mainForm" action="#" method="post">
+        <fieldset class="box">
+          <legend>Your details</legend>
+          <div>
+            <p>
+              <label class="textLabel" for="firstNameInput">First Name:</label>
+              <input id="firstNameInput" name="FirstName" type="text" autofocus="autofocus" class="textinput" />
+            </p>
+            <p>
+              <label class="textLabel" for="lastNameInput">Last Name:</label>
+              <input id="lasNameInput" name="LastName" type="text" class="textinput" size="10"/>
+            </p>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
