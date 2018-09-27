@@ -1,7 +1,7 @@
 function addDnDHandlers() {
   var coffeeimages = document.getElementsByClassName("productarticlewide");
 
-  var shoppingCartDropzone = document.getElementbyId("shoppingcart");
+  var shoppingCartDropzone = document.getElementById("shoppingcart");
   var shoppingcart = document.querySelectorAll("#shoppingcart ul")[0];
 
   for (var i = 0; i < coffeeimages.length; i++) {
@@ -11,7 +11,7 @@ function addDnDHandlers() {
     }, false);
   }
 
-  shoppingCartDropzone.addEventListener("dragover", Function(ev) {
+  shoppingCartDropzone.addEventListener("dragover", function(ev) {
     if (ev.preventDefault) {
       ev.preventDefault();
     }
@@ -25,7 +25,7 @@ function addDnDHandlers() {
     }
 
     var coffeeId = ev.dataTransfer.getData("Text");
-    var element = document.getElementbyId(coffeeId);
+    var element = document.getElementById(coffeeId);
 
     addCoffeeToShoppingCart(element, coffeeId);
     ev.stopPropagation();
