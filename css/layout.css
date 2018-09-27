@@ -5,6 +5,11 @@ body {
   font-family: Verdana;
 }
 
+@font-face {
+  font-family: headerfont;
+  src: url("fonts/Lobster_1.3.otf");
+}
+
 header {
   font-weight: bold;
 }
@@ -21,13 +26,6 @@ header {
 
 #mainHeader {
   height: 80px;
-}
-
-.searchbox {
-  float: right;
-  padding: 5px;
-  margin: 10px 10px;
-  width: 200px;
 }
 
 nav {
@@ -61,7 +59,17 @@ nav {
     }
 
 .backgroundgradient {
-    background-color:#603813;
+  background: -webkit-linear-gradient(left, #603813, #341c05); /* for safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #603813, #341c05); /* for opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #603813, #341c05); /* for firefox 3.6 to 15 */
+  background: linear-gradient(to right, #603813, #341c05);
+}
+
+.searchbox {
+    float: right;
+    padding: 5px;
+    margin: 10px 10px;
+    width: 200px;
 }
 
 #headername {
@@ -70,6 +78,7 @@ nav {
   padding: 15px;
   margin: 8px 0px;
   font-weight: bold;
+  font-family: headerfont;
 }
 
 #welcomeimage {
@@ -119,12 +128,13 @@ nav {
     #events > ul > li {
       margin-bottom: 3px;
     }
-    #bestsellers {
-        height: 100%;
-        width: 700px;
-        float: left;
-        margin-bottom: 20px;
-    }
+
+#bestsellers {
+  height: 100%;
+  width: 700px;
+  float: left;
+  margin-bottom: 20px;
+}
 
 #bestsellers > header {
   color: #603813;
@@ -152,6 +162,31 @@ nav {
     background-color: #603813;
     color: white;
     padding-left: 10px;
+  }
+
+.addtocartbutton {
+  cursor: pointer;
+  padding: 4px 25px;
+  background: #603813;
+  border: 1px solid #381f09;
+
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+
+  -webkit-box-shadow: 0 0 4px rbga(0,0,0,.75);
+  -moz-box-shadow: 0 0 4px rbga(0,0,0,.75);
+  box-shadow: 0 0 4px rbga(0,0,0,.75);
+  color: #f3f3f3;
+  font-size: 0.8em;
+  width: 80px;
+}
+
+  .addtocartbutton:hover, .addtocartbutton:focus {
+    background-color: #512c0a;
+    -webkit-box-shadow: 0 0 1px rbga(0,0,0,.75);
+    -moz-box-shadow: 0 0 1px rbga(0,0,0,.75);
+    box-shadow: 0 0 1px rbga(0,0,0,.75);
   }
 
 .productarticle {
@@ -191,6 +226,10 @@ footer {
   background-color: #5c5045;
   margin: 20px 0px 20px;
   padding: 5px;
+}
+
+.smalltext {
+  font-size: 10px;
 }
 
 /*All coffees page styles*/
@@ -280,3 +319,18 @@ footer {
     font-weight: bold;
     padding-top: 15px;
 }
+
+/*Checkout page*/
+/*
+.textlabel {
+  float: left;
+  width: 100px;
+  padding-bottom: 2px;
+}
+
+.textinput {
+  float: right;
+  width: 200px;
+  padding-bottom: 2px;
+}
+*/
