@@ -340,3 +340,20 @@ footer {
   padding-bottom: 2px;
 }
 */
+
+/*Find us page styles*/
+.maptostore {
+    float: left;
+    width: 1000px;
+}
+
+#map {
+    float: left;
+    width: 65%;
+    height: 600px;
+    margin: 25px;
+}
+
+#driving-directions {
+    float: left;
+}

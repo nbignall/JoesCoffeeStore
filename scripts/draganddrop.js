@@ -4,6 +4,27 @@ function addDnDHandlers() {
   var shoppingCartDropzone = document.getElementById("shoppingcart");
   var shoppingcart = document.querySelectorAll("#shoppingcart ul")[0];
 
+  var Cart = (function() {
+    this.coffees = new Array();
+  });
+
+  var Coffee = (function(id, price) {
+    this.coffeeId = id;
+    this.price = price;
+  });
+
+  var currentCart = null;
+  currentCart = JSON.parse(localStorage.getItem('cart'));
+  if (!currentCart) {
+    createEmptyCart();
+  }
+
+  UpdateShoppingCartUI();
+  currentCart.addCoffee = function (coffee) {
+    currentCart.coffees.push(coffee);
+    localStorage.setItem('cart', JSON.stringify(currentCart));
+  }
+
   for (var i = 0; i < coffeeimages.length; i++) {
     coffeeimages[i].addEventListener("dragstart", function (ev) {
       ev.dataTransfer.effectAllowed = 'copy';
@@ -34,10 +55,31 @@ function addDnDHandlers() {
   }, false);
 
   function addCoffeeToShoppingCart(item, id) {
-    var html = id + " " + item.getAttribute("data-price");
+    var price = item.getAttribute("data-price");
+
+    var coffee = new Coffee(id, price);
+    currentCart.addCoffee(coffee);
+
+    UpdateShoppingCartUI();
+/*    var html = id + " " + item.getAttribute("data-price");
 
     var liElement = document.createElement('li');
     liElement.innerHTML = html;
-    shoppingcart.appendChild(liElement);
+    shoppingcart.appendChild(liElement);*/
+  }
+
+  function createEmptyCart() {
+    localStorage.clear();
+    localStorage.setItem("cart", JSON.stringify(new Cart()));
+    currentCart = JSON.parse(localStorage.getItem("cart"));
+  }
+
+  function UpdateShoppingCartUI() {
+    shoppingcart.innerHTML = "";
+    for (var i = 0; i < currentCart.coffees.length; i++) {
+      var liElement = document.createElement('li');
+      liElement.innerHTML = currentCart.coffees[i].coffeeId + " " + currentCart.coffees[i].price;
+      shoppingcart.appendChild(liElement);
+    }
   }
 }
